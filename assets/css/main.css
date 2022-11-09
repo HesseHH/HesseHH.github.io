@@ -50,13 +50,17 @@ nav {
 
 #list-mb {
     position: absolute;
-    background-color: antiquewhite;
+    background-color: #222;
     height: 100vh;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     padding: 30px;
+}
+
+#list-mb hr {
+    color: #fff;
 }
 
 #list-mb div {
@@ -75,12 +79,13 @@ nav {
     display: block;
     text-align: center;
     text-decoration: none;
+    color: #fff;
 }
 
 #list-mb a:hover {
     background-color: rgba(2, 2, 2, 0.212);
-    border-left: 3px solid red;
-    border-right: 3px solid red;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
 }
 
 .is-hidden {
@@ -459,4 +464,27 @@ textarea:focus {
 
 .closed {
     display: none;
+}
+
+#error-message {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;
+    z-index: 1000;
+}
+
+#error-message > div > h3 {
+    color: rgb(255, 68, 68);
+}
+
+#error-message > div {
+    background-color: #fff;
+    width: 250px;
+    max-width: 100%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }

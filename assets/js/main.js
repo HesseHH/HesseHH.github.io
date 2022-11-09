@@ -11,20 +11,34 @@ btnList.addEventListener('click', () => {
         }, 1000);
     }
 
-    if ( listMb.classList.contains('animate__backInRight') ) {
-        listMb.classList.remove('animate__backInRight');
-        listMb.classList.add('animate__backOutRight');
+    if ( listMb.classList.contains('animate__fadeInRight') ) {
+        listMb.classList.remove('animate__fadeInRight');
+        listMb.classList.add('animate__fadeOutRight');
     }else {
-        listMb.classList.remove('animate__backOutRight');
-        listMb.classList.add('animate__backInRight');
+        listMb.classList.remove('animate__fadeOutRight');
+        listMb.classList.add('animate__fadeInRight');
 
     }
 
-    if ( !listMb.classList.contains('animate__backInRight') && !listMb.classList.contains('animate__backOutRight') ) {
-        listMb.classList.add('animate__backInRight');
+    if ( !listMb.classList.contains('animate__fadeInRight') && !listMb.classList.contains('animate__fadeOutRight') ) {
+        listMb.classList.add('animate__fadeInRight');
     }
 
 });
+
+const linksMb = document.querySelectorAll('.link-mb');
+
+linksMb.forEach( element => {
+    element.addEventListener('click', () => {
+        const listMb = document.getElementById('list-mb');
+        listMb.classList.remove('animate__fadeInRight');
+        listMb.classList.add('animate__fadeOutRight');
+        setTimeout(() => {
+            listMb.classList.remove('animate__fadeOutRight'); 
+            listMb.classList.toggle('is-hidden'); 
+        }, 1000);
+    });
+})
 
 window.addEventListener('scroll', () => {
     console.log('1')
@@ -32,12 +46,32 @@ window.addEventListener('scroll', () => {
 
 const form = document.getElementById('form');
 
-form.addEventListener('submit', (e) => {
-    // e.preventDefault();
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
+form.addEventListener('submit', event => {
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-    console.log('hola')
+    if ( email.length === 0 || message.length === 0 ) {
+        event.preventDefault();
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.classList.remove('closed');
+        errorMessage.classList.add('show');
+        errorMessage.classList.add('animate__animated');
+        errorMessage.classList.add('animate__fadeInUp');
+        setTimeout(() => {
+            setTimeout(() => {
+                errorMessage.classList.add('closed');
+                errorMessage.classList.remove('animate__animated');
+                errorMessage.classList.remove('animate__fadeOutDown');
+            }, 1000);
+            
+            errorMessage.classList.remove('show');
+            errorMessage.classList.remove('animate__fadeInUp');
+            errorMessage.classList.add('animate__animated');
+            errorMessage.classList.add('animate__fadeOutDown');
+        }, 5000);
+    }
+
+
     
 });
 
