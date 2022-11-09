@@ -1,0 +1,462 @@
+html body {
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+body {
+    background-image: url("../img/background/bg.svg");
+}
+
+header {
+    height: 100vh;
+}
+
+h4 {
+    margin: 0 !important;
+}
+
+
+/* Start Nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    background-color: #FFF;
+    z-index: 1000;
+}
+
+#list {
+    margin-top: 1rem !important;
+}
+
+#list li {
+    list-style: none;
+    display: inline-block;
+}
+
+#list li a {
+    text-decoration: none;
+    padding: 15px;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+#list li a:hover {
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+#list-mb {
+    position: absolute;
+    background-color: antiquewhite;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px;
+}
+
+#list-mb div {
+    height: 70px;
+}
+
+#list-mb li {
+    list-style: none;
+    padding: 10px;
+}
+
+#list-mb a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+#list-mb a:hover {
+    background-color: rgba(2, 2, 2, 0.212);
+    border-left: 3px solid red;
+    border-right: 3px solid red;
+}
+
+.is-hidden {
+    display: none;
+}
+
+#btn-list {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    /* #list-mb {
+        display: block;
+    } */
+    #btn-list {
+        display: block;
+        z-index: 2000;
+    }
+
+    #list {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    #list-mb {
+        display: none;
+    }
+}
+
+/* End Nav */
+
+/* Start portfolio section */
+#portfolio > div {
+    display: flex;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#portfolio > div > div {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 30px;
+    /* background-image: url('../img/triviaLOL.png'); */
+}
+
+#portfolio h1 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+#portfolio > div > div > div {
+    color: #FFF;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: opacity .3s ease-out, color 2s;
+    background-image: linear-gradient( rgba(11, 255, 243, 0.521), rgba(132, 255, 249, 0.521) );
+}
+
+#portfolio > div > div > div > img {
+    width: 100px;
+    margin-top: 10px;
+    transform: translateY(-110px);
+    transition: transform .3s;
+}
+
+#portfolio > div > div > div > h1 {
+    transform: translateY(50px);
+    transition: transform .3s;
+}
+
+#portfolio > div > div > div:hover {
+    opacity: 1;
+}
+
+#portfolio > div > div > div:hover > h1 {
+    transform: translateY(0px);
+}
+
+#portfolio > div > div > div:hover > img {
+    transform: translateY(0px);
+}
+
+#portfolio > div > div > img {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* End portfolio section */
+
+
+/* Start skillset section */
+#skillset {
+    margin: 150px 0;
+    padding-top: 55px;
+}
+
+#skillset h1 {
+    margin-bottom: 50px;
+    font-size: 3.5rem;
+}
+
+#skillset > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#skillset > div > div {
+    width: 150px;
+    padding: 20px;
+    position: relative;
+}
+
+#skillset img {
+    width: 100%;
+    position: inherit;
+    transition: transform .3s ease
+}
+
+#skillset > div > div:hover img {
+    transform: scale(1.2);
+}
+
+#skillset span {
+    background-color: rgba(0,0,0,.75);
+    border-radius: 0.5rem;
+    left: 50%;
+    opacity: 0;
+    padding: 0.5rem 0;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: -40px;
+    transform: translate(-60px,10px);
+    transition: opacity .3s ease,transform .3s ease;
+    width: 120px;
+    z-index: 1;
+    
+    color: #fff;
+}
+
+#skillset span:after {
+    border: 5px solid transparent;
+    border-top-color: rgba(0,0,0,.75);
+    content: "";
+    left: 50%;
+    margin-left: -5px;
+    position: absolute;
+    top: 100%;
+}
+
+#skillset > div > div:hover > span {
+    opacity: 1;
+    transform: translate(-60px);
+}
+/* End skillset section */
+
+/* Start contact section */
+#contact {
+    background-color: #222;
+    color: #fff;
+    padding-bottom: 100px;
+}
+
+#contact h1 {
+    padding-top: 80px;
+    padding-bottom: 10px;
+}
+
+#contact hr {
+    background-image: linear-gradient(to right,#ffffff2a,#fff,#ffffff2a);
+    border: 0;
+    height: 0.1rem;
+    max-width: 100%;
+
+    margin: 1rem 0;
+    color: inherit;
+    background-color: transparent !important;
+    border: 0;
+    opacity: 1 !important;
+}
+
+#contact form {
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#contact form > div {
+    width: 100%;
+}
+
+#contact form > div > div {
+    margin: 30px 0px;
+}
+
+#contact form > div > div > label {
+    margin: 10px 0px;
+}
+
+#contact label, #contact input, #contact textarea {
+    min-width: 400px;
+    max-width: 600px;
+}
+
+@media ( max-width: 576px ) {
+    #contact label, #contact input, #contact textarea {
+        width: 100%;
+        min-width: 100%;
+        max-width: none;
+    }
+
+    #contact form > div > div {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+
+    #contact form {
+        padding: 15px;
+    }
+
+    #portfolio > div > div {
+        position: relative;
+        max-width: 300px;
+        border-radius: 30px;
+        /* background-image: url('../img/triviaLOL.png'); */
+    }
+
+    #portfolio > div > div > img {
+        max-width: 300px;
+        margin: auto;
+        border-radius: 20px;
+    }
+}
+
+#contact button {
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 40px;
+    width: 120px;
+    color: #fff;
+    border-color: #fff;
+    border-style: solid;
+}
+
+#contact button:hover {
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+input {
+    border: none;
+    color: #fff;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.425);
+    padding: 10px;
+}
+
+input:hover {
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+textarea {
+    border: none;
+    color: #fff;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.425);
+    padding: 10px;
+}
+
+textarea:hover {
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+textarea:focus {
+    background-color: rgba(255, 255, 255, 0.164);
+}
+/* End contact section */
+
+._modal {
+    display: flex;
+    background-color: rgba(0, 0, 0, .3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+}
+
+._modal > div {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+._modal h1 {
+    text-align: center;
+}
+
+._modal img {
+    max-width: 100%;
+    margin: auto;
+}
+
+._modal button {
+    outline: none;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 40px;
+    margin-top: 10px;
+    width: 120px;
+}
+
+._modal button:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+._modal > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+._modal p {
+    margin-top: 5px;
+    text-align: justify;
+}
+
+._modal a {
+    text-decoration: none;
+    color: #504ddd;
+    border: 2px solid #504ddd;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+._modal a:hover {
+    background-color: #504ddd;
+    color: #fff;
+}
+
+.show {
+    display: flex;
+}
+
+.closed {
+    display: none;
+}
